@@ -21,7 +21,6 @@
     "jasmine-stealth": "0.0.16"
   },
   "dependencies": {
-    "lodash": "2.4.1",
     "promise": "5.0.0",
     "request-then": "0.0.1",
     "semver": "2.3.0",
