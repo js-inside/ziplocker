@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/js-inside/ziplocker.svg?branch=master)](https://travis-ci.org/js-inside/ziplocker)
+
 #Introduction
 
 Ziplocker is a simple replacement for `npm shrinkwrap` that takes optional dependencies into account.
