@@ -1,0 +1,31 @@
+{
+  "name": "ziplocker",
+  "version": "0.0.1",
+  "description": "Locks down dependencies, optional dependencies, and their dependencies to a specific version.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/run.js"
+  },
+  "keywords": [
+    "ziplocker",
+    "semver",
+    "ziplock",
+    "lockdown",
+    "seal",
+    "shrinkwrap"
+  ],
+  "author": "Joe Grund",
+  "license": "MIT",
+  "devDependencies": {
+    "minijasminenode": "0.4.0",
+    "jasmine-stealth": "0.0.16"
+  },
+  "dependencies": {
+    "lodash": "2.4.1",
+    "promise": "5.0.0",
+    "semver": "2.3.0",
+    "then-request": "0.0.4",
+    "wiretree": "0.2.4",
+    "yargs": "1.2.2"
+  }
+}
