@@ -34,11 +34,12 @@ describe('dependency tree', function () {
       body: {
         versions: {
           '1.2.3': {},
-          '1.2.4': {},
+          '1.2.4': {
+            dependencies: {
+              bap: '^3.2.1'
+            }
+          },
           '1.3.0': {}
-        },
-        dependencies: {
-          bap: '^3.2.1'
         }
       }
     }));

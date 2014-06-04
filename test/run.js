@@ -3,7 +3,7 @@
 var miniJasmineLib = require('minijasminenode');
 
 miniJasmineLib.addSpecs('test/global.js');
-miniJasmineLib.addSpecs('test/lib/dependency-tree.js');
+miniJasmineLib.addSpecs('test/lib/get-dependency-tree.js');
 miniJasmineLib.addSpecs('test/lib/request.js');
 miniJasmineLib.addSpecs('test/lib/ziplock-json.js');
 miniJasmineLib.executeSpecs();
