@@ -32,18 +32,18 @@ describe('ziplock JSON', function () {
 
   it('should resolve file data if file exists', function (done) {
     promise.then(function (response) {
-      expect(response).toEqual(ziplockJson);
+      expect(response).toEqual(ziplockJsonData);
       done();
     });
 
     var callback = fs.readFile.mostRecentCall.args[1];
 
-    callback(null, ziplockJson);
+    callback(null, ziplockJsonData);
   });
 
   it('should resolve with the dependency tree if the file does not exist', function (done) {
     promise.then(function (response) {
-      expect(response).toEqual(ziplockJsonData);
+      expect(response).toEqual(JSON.stringify(ziplockJsonData, null, 2));
       done();
     });
 
