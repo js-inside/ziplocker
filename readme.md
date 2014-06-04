@@ -19,4 +19,5 @@ afterwards, just run `npm install` after running `ziplocker`.
 
 `ziplocker` supports the following command line options:
 
-`--registry-url` (default: https://registry.npmjs.org/): The registry to fetch dependencies from.
+`-registry-url` (default: https://registry.npmjs.org/): The registry to fetch dependencies from.
+`-proxy-url` (default: null): The proxy to use when fetching dependencies.
