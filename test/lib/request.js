@@ -1,23 +1,26 @@
 'use strict';
 
 describe('request', function () {
-  var registryUrl, thenRequest, request;
+  var registryUrl, requestThen, request;
   var requestFactory = require('../../lib/request').wiretree;
-  var lodash = require('lodash');
   var Promise = require('promise');
 
   beforeEach(function () {
     registryUrl = 'https://registry.npmjs.org/';
-    thenRequest = function () {};
-    thenRequest.apply = jasmine.createSpy('apply');
+    requestThen = jasmine.createSpy('requestThen');
 
-    thenRequest.apply
-      .when(thenRequest, [registryUrl + 'foo'])
+    requestThen
+      .when({
+        uri: registryUrl + 'foo',
+        json: true
+      })
       .thenReturn(Promise.resolve({
-        body: '{"foo": "bar"}'
+        body: {
+          foo: 'bar'
+        }
       }));
 
-    request = requestFactory(registryUrl, thenRequest, lodash);
+    request = requestFactory(registryUrl, requestThen);
   });
 
   it('should be a function', function () {
@@ -33,6 +36,16 @@ describe('request', function () {
       });
 
       done();
+    });
+  });
+
+  it('should call requestThen with a proxy', function () {
+    requestFactory(registryUrl, requestThen, 'http://example.com:8080')('foo');
+
+    expect(requestThen).toHaveBeenCalledWith({
+      uri: registryUrl + 'foo',
+      json: true,
+      proxy: 'http://example.com:8080'
     });
   });
 });
