@@ -23,8 +23,8 @@
   "dependencies": {
     "lodash": "2.4.1",
     "promise": "5.0.0",
+    "request-then": "0.0.1",
     "semver": "2.3.0",
-    "then-request": "0.0.4",
     "wiretree": "0.2.4",
     "yargs": "1.2.2"
   }
