@@ -13,7 +13,8 @@ var argv = require('yargs')
 var Wiretree = require('wiretree');
 var path = require('path');
 var fs = require('fs');
-var tree = new Wiretree( __dirname );
+var spinner = require('char-spinner');
+var tree = new Wiretree(__dirname);
 
 tree.add(argv.registryUrl, 'registryUrl');
 tree.add(argv.proxyUrl, 'proxyUri');
@@ -29,3 +30,5 @@ tree.load(path.join('lib', 'get-dependency-tree.js'), 'getDependencyTree');
 tree.load(path.join('lib', 'request.js'), 'request');
 
 tree.get('ziplockJson');
+
+spinner();
