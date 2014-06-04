@@ -1,7 +1,7 @@
 'use strict';
 
 describe('dependency tree', function () {
-  var dependencyTree = require('../../lib/dependency-tree').wiretree;
+  var getDependencyTree = require('../../lib/get-dependency-tree').wiretree;
   var Promise = require('promise');
   var semver = require('semver');
 
@@ -64,7 +64,8 @@ describe('dependency tree', function () {
       }
     }));
 
-    promise = dependencyTree(packageJson, request, Promise, semver);
+    var dependencyTree = getDependencyTree(packageJson, request, Promise, semver);
+    promise = dependencyTree();
   });
 
   it('should return a promise', function () {
